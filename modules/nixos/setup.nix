@@ -1,6 +1,6 @@
 { lib, ...}:
 {
-  options.custom = {
+  options.custom.setup = {
     options.swarselsystems.isSwap = lib.mkEnabkeOption "use swap on the system";
     options.swarselsystems.isDisko = lib.mkEnabkeOption "use disko on the system";
     options.swarselsystems.swapSize = lib.mkOption {
