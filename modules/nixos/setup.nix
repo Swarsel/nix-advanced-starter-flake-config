@@ -11,6 +11,6 @@
       type = lib.types.str;
       default = "";
     };
-  }
+  };
 
 }
