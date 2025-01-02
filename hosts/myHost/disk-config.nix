@@ -1,10 +1,10 @@
 { lib, pkgs, config, rootDisk, ... }:
 {
-  disko.devices = lib.mkIf config.custom.isDisko {
+  disko.devices = lib.mkIf config.custom.setup.isDisko {
     disk = {
       disk0 = {
         type = "disk";
-        device = config.custom.rootDisk;
+        device = config.custom.setup.rootDisk;
         content = {
           type = "gpt";
           partitions = {
@@ -42,9 +42,9 @@
                       "noatime"
                     ];
                   };
-                  "/swap" = lib.mkIf config.custom.isSwap {
+                  "/swap" = lib.mkIf config.custom.setup.isSwap {
                     mountpoint = "/.swapvol";
-                    swap.swapfile.size = config.custom.swapSize;
+                    swap.swapfile.size = config.custom.setup.swapSize;
                   };
                 };
               };
