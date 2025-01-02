@@ -26,6 +26,7 @@
         inputs.home-manager.nixosModules.home-manager
         "${self}/hosts/${host}"
         "${self}/hosts/${host}/hardware-configuration.nix"
+        "${self}/hosts/${host}/disk-config.nix"
         "${self}/modules/nixos"
       ];
     };
